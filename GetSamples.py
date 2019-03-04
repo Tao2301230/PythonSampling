@@ -31,5 +31,14 @@ def get_data_from_ask_online():
         f.write(''.join(records))
 
 
-get_data_from_ask_online()
+def get_data_from_knowledge_db():
+    with open('/home/bantao/pcworkspace/bt_develop/CNN/datasets/knowledge_db_similar_question.txt', 'r') as f:
+        records = list(set(f.readlines()))
+        records = [records[i] for i in range(0, len(records), 30) if len(records[i]) >= 10]
+        print(len(records))
 
+    with open('output_knowledge_db', 'w') as f:
+        f.write(''.join(records))
+
+
+get_data_from_knowledge_db()
