@@ -40,5 +40,3 @@ def get_data_from_knowledge_db():
     with open('output_knowledge_db', 'w') as f:
         f.write(''.join(records))
 
-
-get_data_from_knowledge_db()
