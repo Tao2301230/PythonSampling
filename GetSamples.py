@@ -40,3 +40,25 @@ def get_data_from_knowledge_db():
     with open('output_knowledge_db', 'w') as f:
         f.write(''.join(records))
 
+
+def get_data_from_cnews():
+    file_Path = os.path.abspath('/home/bantao/pcworkspace/bt_develop/datasets/cnews.train.txt')
+    print(file_Path)
+    count = 0
+
+    sample = list()
+    with open(file_Path, 'r') as f:
+
+        for line in f:
+            count += 1
+            if count % 400 == 0:
+                sample.append(line)
+
+    print(len(sample))
+    print(sample[50])
+
+    with open('output_cnews', 'w') as f:
+        f.write('\n'.join(sample))
+
+
+get_data_from_cnews()
